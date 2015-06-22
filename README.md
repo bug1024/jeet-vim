@@ -11,7 +11,10 @@ My vim configuration
 ##Install
     git clone https://github.com/bug1024/jeet-vim.git
     git clone https://github.com/gmarik/vundle.git jeet-vim/vim/bundle/vundle/
-    git clone https://github.com/ryanoasis/nerd-filetype-glyphs-fonts-patcher.git ~/.font/
+    git clone https://github.com/ryanoasis/nerd-filetype-glyphs-fonts-patcher.git
+    cd nerd-filetype-glyphs-fonts-patcher
+    ./install.sh
+    cd ..
     ln jeet-vim/vimrc ~/.vimrc
     ln jeet-vim/vimrc.bundles ~/.vimrc.bundles
     ln jeet-vim/vim/ ~/.vim
