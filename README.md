@@ -16,3 +16,7 @@ Vim configuration especially for PHP developer
     ln jeet-vim/vim/ ~/.vim
 
 ##Plugins
+
+##Others
+* [more configuration](https://github.com/gmarik/Vundle.vim/wiki/Examples)
+* [中文配置](https://github.com/yangyangwithgnu/use_vim_as_ide)
