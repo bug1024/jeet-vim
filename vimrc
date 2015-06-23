@@ -159,7 +159,7 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
+" 1 tab = 4 spaces
 set shiftwidth=4
 set tabstop=4
 
@@ -173,8 +173,8 @@ set ai
 " Smart indent
 set si
 
-" Wrap lines
-set wrap
+" No wrap lines
+set nowrap
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
@@ -199,9 +199,9 @@ endif
 set background=dark
 colorscheme solarized
 set t_Co=256
-" optimize
+" solarized部分修改
 hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
-hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=146
+hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=32
 hi! link NonText VertSplit
 hi! Normal guifg=#77A5B1
 hi! Constant guifg=#00BCE0
@@ -211,7 +211,6 @@ hi! CursorLine cterm=NONE gui=NONE
 hi! Visual ctermbg=233
 hi! Type gui=bold
 hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
-
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
