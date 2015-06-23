@@ -1,5 +1,5 @@
 ##jeet-vim
-Vim configuration especially for PHP developer
+Vim configuration
 
 ##My environment
 * ubuntu 14.04
@@ -14,8 +14,6 @@ Vim configuration especially for PHP developer
     ln jeet-vim/vimrc ~/.vimrc
     ln jeet-vim/vimrc.bundles ~/.vimrc.bundles
     ln jeet-vim/vim/ ~/.vim
-
-##Plugins
 
 ##Others
 * [more configuration](https://github.com/gmarik/Vundle.vim/wiki/Examples)
