@@ -80,7 +80,7 @@ set whichwrap+=<,>,h,l
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
-  set mouse=v
+  set mouse=a
 endif
 
 " Ignore case when searching
