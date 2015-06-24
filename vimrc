@@ -3,7 +3,7 @@
 "===============================================================
 " Author    Jeet
 " Version   1.0
-" Date      22th.Jun.2015
+" Date      2015.6.22
 "===============================================================
 
 "---------------------------------------------------------------
@@ -80,7 +80,7 @@ set whichwrap+=<,>,h,l
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
-  set mouse=a
+  set mouse=v
 endif
 
 " Ignore case when searching
@@ -93,16 +93,16 @@ set smartcase
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 
 " How many tenths of a second to blink when matching brackets
 set mat=2
@@ -201,7 +201,7 @@ colorscheme solarized
 set t_Co=256
 " solarized部分修改
 hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
-hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=32
+hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=243
 hi! link NonText VertSplit
 hi! Normal guifg=#77A5B1
 hi! Constant guifg=#00BCE0
@@ -230,6 +230,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " Terminal encoding
 set termencoding=utf-8
+
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
@@ -292,8 +293,12 @@ cnoremap <C-e> <End>
 "----------------------------------------------------------------
 " Others Setting
 "----------------------------------------------------------------
-
-
+" http://vim.wikia.com/wiki/Configuring_the_cursor
+" cursor shape
+au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
