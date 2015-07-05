@@ -86,6 +86,15 @@ if has('mouse')
   set mouse=a
 endif
 
+" Copy|Paste everwhere
+if has('clipboard')
+    if has('unnamedplus')  " When possible use + register for copy-paste
+        set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+        set clipboard=unnamed
+    endif
+endif
+
 " Ignore case when searching
 set ignorecase
 
@@ -132,7 +141,6 @@ set number
 set ruler
 
 "Display tabs and trailing spaces visually
-"set list listchars=tab:\ \ ,trail:·
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
@@ -189,9 +197,6 @@ set nowrap
 
 " No welcome window
 set shortmess=atI
-
-" 启用每行超过140列的字符提示
-au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
