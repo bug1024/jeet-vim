@@ -1,5 +1,5 @@
 ##jeet-vim
-Vim configuration
+Vim configuration for PHP developer
 
 ##My environment
 * ubuntu 14.04
@@ -24,6 +24,7 @@ Vim configuration
     ,p Search file
     ,f Files Recent Open
     ,num Go to tab quickly, num = 1~9
+    K(shift+k) Go to PHP manual
 
 ##Plugins
 * [Vundle](https://github.com/gmarik/Vundle.vim)
