@@ -17,4 +17,5 @@ Vim configuration
 
 ##Others
 * [more configuration](https://github.com/gmarik/Vundle.vim/wiki/Examples)
+* [Utimate Vim Config](https://github.com/bug1024/spf13-vim)
 * [中文配置](https://github.com/yangyangwithgnu/use_vim_as_ide)
