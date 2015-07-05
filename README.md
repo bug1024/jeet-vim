@@ -13,7 +13,7 @@ Vim configuration
     git clone https://github.com/gmarik/vundle.git jeet-vim/vim/bundle/vundle/
     ln jeet-vim/vimrc ~/.vimrc
     ln jeet-vim/vimrc.bundles ~/.vimrc.bundles
-    ln jeet-vim/vim/ ~/.vim
+    ln -s jeet-vim/vim/ ~/.vim
 
 ##Others
 * [more configuration](https://github.com/gmarik/Vundle.vim/wiki/Examples)
