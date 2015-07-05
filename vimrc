@@ -2,8 +2,8 @@
 " Vim Configuration
 "===============================================================
 " Author    Jeet
-" Version   1.0
-" Date      2015.6.22
+" Version   2.0
+" Date      2015.7.5
 "===============================================================
 
 "---------------------------------------------------------------
@@ -31,12 +31,15 @@ set history=2000
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Allow for cursor beyond last character
+set virtualedit=onemore
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
-"command W w !sudo tee % > /dev/null
+cmap w!! w !sudo tee % >/dev/null
 
 " Autoload .vimrc when it changes
 autocmd! bufwritepost .vimrc source %
@@ -80,7 +83,7 @@ set whichwrap+=<,>,h,l
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
-  set mouse=v
+  set mouse=a
 endif
 
 " Ignore case when searching
@@ -129,7 +132,9 @@ set number
 set ruler
 
 "Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Height of the command bar
 set cmdheight=2
@@ -173,29 +178,25 @@ set ai
 " Smart indent
 set si
 
+" Puts new vsplit windows to the right of the current
+set splitright
+
+" Puts new split windows to the bottom of the current
+set splitbelow
+
 " No wrap lines
 set nowrap
+
+" No welcome window
+set shortmess=atI
+
+" 启用每行超过140列的字符提示
+au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
-" Theme Setting
+" UI Setting
 "----------------------------------------------------------------
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guifont=Monaco:h14
-    if has("gui_gtk2")
-        set guifont=Monaco\ 12,Monospace\ 12
-    endif
-    set guioptions-=T
-    set guioptions+=e
-    set guioptions-=r
-    set guioptions-=L
-    set guitablabel=%M\ %t
-    set showtabline=1
-    set linespace=2
-    set noimd
-    set t_Co=256
-endif
 set background=dark
 colorscheme solarized
 set t_Co=256
@@ -211,17 +212,23 @@ hi! CursorLine cterm=NONE gui=NONE
 hi! Visual ctermbg=233
 hi! Type gui=bold
 hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
+
+"设置标记一列的背景颜色和数字一行颜色一致
+hi! link SignColumn   LineNr
+hi! link ShowMarksHLl DiffAdd
+hi! link ShowMarksHLu DiffChange
+
+" http://vim.wikia.com/wiki/Configuring_the_cursor
+" Cursor shape
+au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
 " Encoding Setting
 "----------------------------------------------------------------
-" Avoid garbled characters in Chinese language windows OS
-"let $LANG='en' 
-"set langmenu=en
-"source $VIMRUNTIME/delmenu.vim
-"source $VIMRUNTIME/menu.vim
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -288,17 +295,21 @@ cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+" Syntax switch
+nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+" Clear tab
+nmap <F7> :%s/\s\+$//g<CR>:noh<CR>
+" Clear space
+nmap <F8> :retab!<CR>
+" Clear  ^M
+nmap cM :%s/\r$//g<CR>:noh<CR>
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
 " Others Setting
 "----------------------------------------------------------------
-" http://vim.wikia.com/wiki/Configuring_the_cursor
-" cursor shape
-au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+set completeopt=longest,menu
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------

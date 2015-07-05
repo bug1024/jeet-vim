@@ -71,15 +71,15 @@ Plugin 'altercation/vim-colors-solarized'
 " 目录树+git文件状态显示
 "----------------------------------------------------------------
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$' ]
+let NERDTreeShowHidden= 1
 let g:NERDTreeWinSize=30
-map <F2> :NERDTreeToggle<cr>
+map <F2> <plug>NERDTreeTabsToggle<CR>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
-"let g:NERDTreeMapOpenSplit = 's'
-"let g:NERDTreeMapOpenVSplit = 'v'
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
@@ -96,34 +96,25 @@ highlight SyntasticErrorSign guifg=white guibg=black
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
-" 强大的自动补全
+" HTML
 "----------------------------------------------------------------
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-"UltiSnips
-let g:ycm_use_ultisnips_completer = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_goto_buffer_command = 'horizontal-split'
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
-" old version
-if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
-    let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
-endif
-" new version
-if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
-    let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-endif
+Plugin 'gorodinskiy/vim-coloresque'
+"----------------------------------------------------------------
 
-" blacklist
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'gitcommit' : 1,
-      \}
+"----------------------------------------------------------------
+" PHP
+"----------------------------------------------------------------
+Plugin 'spf13/PIV'
+let g:DisableAutoPHPFolding = 0
+let g:PIVAutoClose = 0
+"----------------------------------------------------------------
+
+"----------------------------------------------------------------
+" 自动补全
+"----------------------------------------------------------------
+Plugin 'Shougo/neocomplcache.vim'
+" Enable neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
@@ -190,12 +181,17 @@ let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions             = ['funky']
 "----------------------------------------------------------------
 
-
 "----------------------------------------------------------------
 " 文件编辑历史
 "----------------------------------------------------------------
 Plugin 'sjl/gundo.vim'
 nnoremap <leader>h :GundoToggle<CR>
+"----------------------------------------------------------------
+
+"----------------------------------------------------------------
+" 多光标编辑
+"----------------------------------------------------------------
+Plugin 'kristijanhusak/vim-multiple-cursors'
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
@@ -261,6 +257,22 @@ let g:javascript_conceal_super     = "Ω"
 "----------------------------------------------------------------
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+nmap <Leader>a& :Tabularize /&<CR>
+vmap <Leader>a& :Tabularize /&<CR>
+nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+nmap <Leader>a=> :Tabularize /=><CR>
+vmap <Leader>a=> :Tabularize /=><CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+nmap <Leader>a,, :Tabularize /,\zs<CR>
+vmap <Leader>a,, :Tabularize /,\zs<CR>
+nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
@@ -309,7 +321,19 @@ Plugin 'kshenoy/vim-signature'
 " git
 "----------------------------------------------------------------
 Plugin 'tpope/vim-fugitive'
-nnoremap <leader>ge :Gdiff<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
+" Mnemonic _i_nteractive
+nnoremap <silent> <leader>gi :Git add -p %<CR>
+nnoremap <silent> <leader>gg :SignifyToggle<CR>
+ 
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
@@ -317,7 +341,7 @@ nnoremap <leader>ge :Gdiff<CR>
 "----------------------------------------------------------------
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_map_keys = 0
-let g:gitgutter_enabled = 0
+let g:gitgutter_enabled  = 1
 let g:gitgutter_highlight_lines = 1
 nnoremap <leader>gs :GitGutterToggle<CR>
 "----------------------------------------------------------------
@@ -326,12 +350,6 @@ nnoremap <leader>gs :GitGutterToggle<CR>
 " 图标美化 系统需安装相关字体https://github.com/ryanoasis/nerd-filetype-glyphs-fonts-patcher.git
 "----------------------------------------------------------------
 Plugin 'ryanoasis/vim-webdevicons'
-"----------------------------------------------------------------
-
-"----------------------------------------------------------------
-" php补全
-"----------------------------------------------------------------
-Plugin 'spf13/PIV'
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
