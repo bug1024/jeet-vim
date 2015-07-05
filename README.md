@@ -14,6 +14,15 @@ Vim configuration
     ln jeet-vim/vimrc ~/.vimrc
     ln jeet-vim/vimrc.bundles ~/.vimrc.bundles
     ln -s jeet-vim/vim/ ~/.vim
+    
+##Key mappings
+    <F2> NerdTree
+    <F3> Tagbar
+    <F6> Syntax on|off
+    <F7> Clear tab
+    <F8> Clear space
+    ,num Go to tab quickly, num = 1~9
+    ,f Files Recent Open
 
 ##Others
 * [more configuration](https://github.com/gmarik/Vundle.vim/wiki/Examples)
