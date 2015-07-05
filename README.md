@@ -6,7 +6,7 @@ Vim configuration
 * vim 7.4
 
 ##Screenshots
-<img src="https://github.com/bug1024/jeet-vim/raw/master/vim.png" alt="vim2.png" title="vim.png">
+<img src="https://github.com/bug1024/jeet-vim/raw/master/vim2.png" alt="vim.png" title="vim.png">
 
 ##Installation
     git clone https://github.com/bug1024/jeet-vim.git
