@@ -21,8 +21,9 @@ Vim configuration
     <F6> Syntax on|off
     <F7> Clear tab
     <F8> Clear space
-    ,num Go to tab quickly, num = 1~9
+    ,p Search file
     ,f Files Recent Open
+    ,num Go to tab quickly, num = 1~9
 
 ##Plugins
 * [Vundle](https://github.com/gmarik/Vundle.vim)
