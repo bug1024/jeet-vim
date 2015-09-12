@@ -54,12 +54,12 @@ autocmd BufReadPost *
 set viminfo^=%
 
 " Enable fold
-set foldenable
-set foldmethod=indent
+" set foldenable
+" set foldmethod=indent
 "set foldlevel=99
 
 " Use space to open or close fold line
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>)
+"nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>)
 
 " Turn on the WiLd menu
 set wildmenu
@@ -219,16 +219,16 @@ hi! Type gui=bold
 hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
 
 "设置标记一列的背景颜色和数字一行颜色一致
-hi! link SignColumn   LineNr
-hi! link ShowMarksHLl DiffAdd
-hi! link ShowMarksHLu DiffChange
+"hi! link SignColumn   LineNr
+"hi! link ShowMarksHLl DiffAdd
+"hi! link ShowMarksHLu DiffChange
 
 " http://vim.wikia.com/wiki/Configuring_the_cursor
 " Cursor shape
-au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+"au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+"au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+"au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+"au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
