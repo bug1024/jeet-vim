@@ -60,6 +60,9 @@ Vim configuration for PHP developer
 * [vim-webdevicons](https://github.com/ryanoasis/vim-webdevicons)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
+##Cheat sheet
+<img src="https://github.com/bug1024/jeet-vim/raw/master/vim-cmd.png" alt="vim-cmd.png" title="vim-cmd.png">
+
 ##Others
 * [more configuration](https://github.com/gmarik/Vundle.vim/wiki/Examples)
 * [Utimate Vim Config](https://github.com/bug1024/spf13-vim)
