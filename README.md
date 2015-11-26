@@ -10,7 +10,7 @@ Vim configuration for PHP developer
 
 ##Installation
     git clone https://github.com/bug1024/jeet-vim.git
-    git clone https://github.com/gmarik/vundle.git jeet-vim/vim/bundle/vundle/
+    git clone https://github.com/gmarik/vundle.git jeet-vim/vim/bundle/Vundle.vim
     ln jeet-vim/vimrc ~/.vimrc
     ln jeet-vim/vimrc.bundles ~/.vimrc.bundles
     ln -s jeet-vim/vim/ ~/.vim
