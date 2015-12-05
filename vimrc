@@ -143,7 +143,6 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 set cmdheight=2
 
 " Show current line
-set cursorcolumn
 set cursorline
 
 " Always show the status line
