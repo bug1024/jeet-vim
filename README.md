@@ -6,7 +6,7 @@ Vim configuration for PHP developer
 * vim 7.4
 
 ##Installation
-    sh install.sh
+    curl https://raw.githubusercontent.com/bug1024/jeet-vim/master/install.sh | bash
     
 ##Key mappings
     <F2> NerdTree
