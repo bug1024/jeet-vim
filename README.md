@@ -1,5 +1,5 @@
 ##jeet-vim
-Vim configuration for PHP developer
+Vim configuration for terminal
 
 ##My environment
 * ubuntu 14.04
