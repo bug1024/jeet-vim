@@ -3,7 +3,7 @@
 "===============================================================
 " Author    Jeet
 " Version   2.0
-" Date      2015.7.5
+" Date      2015.12.5
 "===============================================================
 
 "---------------------------------------------------------------
@@ -53,11 +53,6 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
-" Enable fold
-" set foldenable
-" set foldmethod=indent
-"set foldlevel=99
-
 " Use space to open or close fold line
 "nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>)
 
@@ -87,13 +82,13 @@ if has('mouse')
 endif
 
 " Copy|Paste everwhere
-if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
-        set clipboard=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
-        set clipboard=unnamed
-    endif
-endif
+"if has('clipboard')
+"    if has('unnamedplus')  " When possible use + register for copy-paste
+"        set clipboard=unnamed,unnamedplus
+"    else         " On mac and Windows, use * register for copy-paste
+"        set clipboard=unnamed
+"    endif
+"endif
 
 " Ignore case when searching
 set ignorecase
@@ -202,33 +197,27 @@ set shortmess=atI
 "----------------------------------------------------------------
 " UI Setting
 "----------------------------------------------------------------
-set background=dark
-colorscheme solarized
-set t_Co=256
-" solarized部分修改
-hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
-hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=243
-hi! link NonText VertSplit
-hi! Normal guifg=#77A5B1
-hi! Constant guifg=#00BCE0
-hi! Comment guifg=#52737B
-hi! link htmlLink Include
-hi! CursorLine cterm=NONE gui=NONE
-hi! Visual ctermbg=233
-hi! Type gui=bold
-hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
+"set background=dark
+"colorscheme solarized
+"set t_Co=256
+"" solarized部分修改
+"hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
+"hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=243
+"hi! link NonText VertSplit
+"hi! Normal guifg=#77A5B1
+"hi! Constant guifg=#00BCE0
+"hi! Comment guifg=#52737B
+"hi! link htmlLink Include
+"hi! CursorLine cterm=NONE gui=NONE
+"hi! Visual ctermbg=233
+"hi! Type gui=bold
+"hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
 
 "设置标记一列的背景颜色和数字一行颜色一致
 "hi! link SignColumn   LineNr
 "hi! link ShowMarksHLl DiffAdd
 "hi! link ShowMarksHLu DiffChange
 
-" http://vim.wikia.com/wiki/Configuring_the_cursor
-" Cursor shape
-"au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-"au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-"au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-"au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
