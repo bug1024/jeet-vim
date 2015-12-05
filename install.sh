@@ -1,6 +1,8 @@
 #!/bin/bash
 
-install_path="~/.jeet-vim"
+cd ~
+
+install_path=".jeet-vim"
 
 echo -e "download jeet-vim...\n"
 git clone https://github.com/bug1024/jeet-vim.git $install_path
