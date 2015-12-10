@@ -21,6 +21,7 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 "----------------------------------------------------------------
+" others plugin
 
 "----------------------------------------------------------------
 " General Setting
