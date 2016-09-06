@@ -3,20 +3,20 @@ Vim configuration for terminal
 
 ##My environment
 * ubuntu 14.04
+* OS X EI Captian 10.11.6
 * vim 7.4
 
 ##Installation
     curl https://raw.githubusercontent.com/bug1024/jeet-vim/master/install.sh | bash
-    
+
 ##Key mappings
-    <F2> NerdTree
-    <F3> Tagbar
-    <F6> Syntax on|off
-    <F7> Clear tab
-    <F8> Clear space
+    ,2 NerdTree
+    ,3 Tagbar
+    ,6 Syntax on|off
+    ,7 Clear tab
+    ,8 Clear space
     ,p Search file
     ,f Files Recent Open
-    ,num Go to tab quickly, num = 1~9
 
 ##Plugins
 * [Vundle](https://github.com/gmarik/Vundle.vim)
