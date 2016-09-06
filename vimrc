@@ -126,7 +126,7 @@ set nowb
 set noswapfile
 
 " 粘贴时不自动缩进换行 导致排版混乱
-set pastetoggle=<F4>
+set pastetoggle=<leader>4
 "----------------------------------------------------------------
 
 "----------------------------------------------------------------
@@ -199,26 +199,26 @@ set shortmess=atI
 "----------------------------------------------------------------
 " UI Setting
 "----------------------------------------------------------------
-"set background=dark
-"colorscheme solarized
-"set t_Co=256
-"" solarized部分修改
-"hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
-"hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=243
-"hi! link NonText VertSplit
-"hi! Normal guifg=#77A5B1
-"hi! Constant guifg=#00BCE0
-"hi! Comment guifg=#52737B
-"hi! link htmlLink Include
-"hi! CursorLine cterm=NONE gui=NONE
-"hi! Visual ctermbg=233
-"hi! Type gui=bold
-"hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
+set background=dark
+colorscheme solarized
+set t_Co=256
+" solarized部分修改
+hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
+hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=243
+hi! link NonText VertSplit
+hi! Normal guifg=#77A5B1
+hi! Constant guifg=#00BCE0
+hi! Comment guifg=#52737B
+hi! link htmlLink Include
+hi! CursorLine cterm=NONE gui=NONE
+hi! Visual ctermbg=233
+hi! Type gui=bold
+hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
 
 "设置标记一列的背景颜色和数字一行颜色一致
-"hi! link SignColumn   LineNr
-"hi! link ShowMarksHLl DiffAdd
-"hi! link ShowMarksHLu DiffChange
+hi! link SignColumn   LineNr
+hi! link ShowMarksHLl DiffAdd
+hi! link ShowMarksHLu DiffChange
 
 "----------------------------------------------------------------
 
@@ -275,16 +275,16 @@ map <leader>tm :tabmove
 map <leader>t<leader> :tabnext 
 
 " Switch to tab quickly
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
+"noremap <leader>1 1gt
+"noremap <leader>2 2gt
+"noremap <leader>3 3gt
+"noremap <leader>4 4gt
+"noremap <leader>5 5gt
+"noremap <leader>6 6gt
+"noremap <leader>7 7gt
+"noremap <leader>8 8gt
+"noremap <leader>9 9gt
+"noremap <leader>0 :tablast<cr>
 
 " Vim cmd keymap
 cnoremap <C-j> <t_kd>
@@ -293,11 +293,11 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
 " Syntax switch
-nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+nnoremap <leader>6 :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 " Clear tab
-nmap <F7> :%s/\s\+$//g<CR>:noh<CR>
+nmap <leader>7 :%s/\s\+$//g<CR>:noh<CR>
 " Clear space
-nmap <F8> :retab!<CR>
+nmap <leader>8 :retab!<CR>
 " Clear  ^M
 nmap cM :%s/\r$//g<CR>:noh<CR>
 "----------------------------------------------------------------
